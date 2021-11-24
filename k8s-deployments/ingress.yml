@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aoc2021-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - http:
+        paths:
+          # Dummy service
+          - path: /foo
+            pathType: Prefix
+            backend:
+              service:
+                name: foo
+                port:
+                  number: 8080
+          # Add more...
