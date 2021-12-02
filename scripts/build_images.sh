@@ -1,2 +1,3 @@
 docker build ./foo -t aoc2021/foo
+docker build ./sonar-sweep -t aoc2021/sonar-sweep
 # Add more...

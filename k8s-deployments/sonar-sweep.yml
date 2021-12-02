@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonar-sweep
+spec:
+  selector:
+    matchLabels:
+      run: sonar-sweep
+  template:
+    metadata:
+      labels:
+        run: sonar-sweep
+    spec:
+      containers:
+      - name: sonar-sweep
+        image: aoc2021/sonar-sweep
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sonar-sweep
+  labels:
+    run: sonar-sweep
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: sonar-sweep
