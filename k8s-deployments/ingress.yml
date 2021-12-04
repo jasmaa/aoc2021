@@ -30,4 +30,11 @@ spec:
                 name: dive
                 port:
                   number: 8080
+          - path: /binary-diagnostic(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: binary-diagnostic
+                port:
+                  number: 8080
           # Add more...

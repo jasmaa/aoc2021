@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binary-diagnostic
+spec:
+  selector:
+    matchLabels:
+      run: binary-diagnostic
+  template:
+    metadata:
+      labels:
+        run: binary-diagnostic
+    spec:
+      containers:
+      - name: binary-diagnostic
+        image: aoc2021/binary-diagnostic
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: binary-diagnostic
+  labels:
+    run: binary-diagnostic
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: binary-diagnostic
