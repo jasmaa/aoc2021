@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: giant-squid
+spec:
+  selector:
+    matchLabels:
+      run: giant-squid
+  template:
+    metadata:
+      labels:
+        run: giant-squid
+    spec:
+      containers:
+      - name: giant-squid
+        image: aoc2021/giant-squid
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: giant-squid
+  labels:
+    run: giant-squid
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: giant-squid

@@ -37,4 +37,11 @@ spec:
                 name: binary-diagnostic
                 port:
                   number: 8080
+          - path: /giant-squid(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: giant-squid
+                port:
+                  number: 8080
           # Add more...

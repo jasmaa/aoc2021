@@ -3,4 +3,5 @@ services=(
   "sonar-sweep"
   "dive"
   "binary-diagnostic"
+  "giant-squid"
 )
