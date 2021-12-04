@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dive
+spec:
+  selector:
+    matchLabels:
+      run: dive
+  template:
+    metadata:
+      labels:
+        run: dive
+    spec:
+      containers:
+      - name: dive
+        image: aoc2021/dive
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dive
+  labels:
+    run: dive
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: dive

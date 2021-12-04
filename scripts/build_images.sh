@@ -1,3 +1,4 @@
-docker build ./foo -t aoc2021/foo
-docker build ./sonar-sweep -t aoc2021/sonar-sweep
-# Add more...
+source $(dirname "$0")/services.sh
+for service_name in "${services[@]}"; do
+  docker build ./$service_name -t aoc2021/$service_name
+done

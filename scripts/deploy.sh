@@ -1,5 +1,6 @@
-kubectl apply -f k8s-deployments/foo.yml
-kubectl apply -f k8s-deployments/sonar-sweep.yml
-# Add more...
+source $(dirname "$0")/services.sh
+for service_name in "${services[@]}"; do
+  kubectl apply -f k8s-deployments/$service_name.yml
+done
 
 kubectl apply -f k8s-deployments/ingress.yml

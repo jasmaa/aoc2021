@@ -23,4 +23,11 @@ spec:
                 name: sonar-sweep
                 port:
                   number: 8080
+          - path: /dive(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: dive
+                port:
+                  number: 8080
           # Add more...
