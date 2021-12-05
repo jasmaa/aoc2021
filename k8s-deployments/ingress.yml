@@ -44,4 +44,11 @@ spec:
                 name: giant-squid
                 port:
                   number: 8080
+          - path: /hydrothermal-venture(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: hydrothermal-venture
+                port:
+                  number: 8080
           # Add more...

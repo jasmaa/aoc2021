@@ -4,4 +4,5 @@ services=(
   "dive"
   "binary-diagnostic"
   "giant-squid"
+  "hydrothermal-venture"
 )

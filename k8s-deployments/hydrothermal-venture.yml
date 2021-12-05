@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hydrothermal-venture
+spec:
+  selector:
+    matchLabels:
+      run: hydrothermal-venture
+  template:
+    metadata:
+      labels:
+        run: hydrothermal-venture
+    spec:
+      containers:
+      - name: hydrothermal-venture
+        image: aoc2021/hydrothermal-venture
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hydrothermal-venture
+  labels:
+    run: hydrothermal-venture
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: hydrothermal-venture
