@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lanternfish
+spec:
+  selector:
+    matchLabels:
+      run: lanternfish
+  template:
+    metadata:
+      labels:
+        run: lanternfish
+    spec:
+      containers:
+      - name: lanternfish
+        image: aoc2021/lanternfish
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lanternfish
+  labels:
+    run: lanternfish
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: lanternfish

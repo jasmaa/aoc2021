@@ -51,4 +51,11 @@ spec:
                 name: hydrothermal-venture
                 port:
                   number: 8080
+          - path: /lanternfish(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: lanternfish
+                port:
+                  number: 8080
           # Add more...
