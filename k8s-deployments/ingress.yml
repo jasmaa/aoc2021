@@ -58,4 +58,11 @@ spec:
                 name: lanternfish
                 port:
                   number: 8080
+          - path: /the-treachery-of-whales(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: the-treachery-of-whales
+                port:
+                  number: 8080
           # Add more...

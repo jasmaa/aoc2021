@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-treachery-of-whales
+spec:
+  selector:
+    matchLabels:
+      run: the-treachery-of-whales
+  template:
+    metadata:
+      labels:
+        run: the-treachery-of-whales
+    spec:
+      containers:
+      - name: the-treachery-of-whales
+        image: aoc2021/the-treachery-of-whales
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: the-treachery-of-whales
+  labels:
+    run: the-treachery-of-whales
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: the-treachery-of-whales

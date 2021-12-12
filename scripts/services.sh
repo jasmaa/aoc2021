@@ -6,4 +6,5 @@ services=(
   "giant-squid"
   "hydrothermal-venture"
   "lanternfish"
+  "the-treachery-of-whales"
 )
