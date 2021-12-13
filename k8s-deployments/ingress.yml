@@ -65,4 +65,11 @@ spec:
                 name: the-treachery-of-whales
                 port:
                   number: 8080
+          - path: /seven-segment-search(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: seven-segment-search
+                port:
+                  number: 8080
           # Add more...

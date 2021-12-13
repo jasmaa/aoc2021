@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seven-segment-search
+spec:
+  selector:
+    matchLabels:
+      run: seven-segment-search
+  template:
+    metadata:
+      labels:
+        run: seven-segment-search
+    spec:
+      containers:
+      - name: seven-segment-search
+        image: aoc2021/seven-segment-search
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: seven-segment-search
+  labels:
+    run: seven-segment-search
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: seven-segment-search

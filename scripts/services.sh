@@ -7,4 +7,5 @@ services=(
   "hydrothermal-venture"
   "lanternfish"
   "the-treachery-of-whales"
+  "seven-segment-search"
 )
