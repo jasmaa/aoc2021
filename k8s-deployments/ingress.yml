@@ -72,4 +72,11 @@ spec:
                 name: seven-segment-search
                 port:
                   number: 8080
+          - path: /smoke-basin(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: smoke-basin
+                port:
+                  number: 8080
           # Add more...

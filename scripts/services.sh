@@ -8,4 +8,5 @@ services=(
   "lanternfish"
   "the-treachery-of-whales"
   "seven-segment-search"
+  "smoke-basin"
 )
