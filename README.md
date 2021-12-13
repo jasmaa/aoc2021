@@ -1,6 +1,7 @@
 # AoC 2021
 
-[Advent of Code 2021](https://adventofcode.com/2021) but with Kubernetes for some reason.
+[Advent of Code 2021](https://adventofcode.com/2021) but each solution is a horribly-written microservice
+and the entire thing is deployed with Kubernetes for some reason.
 
 ## Development
 
