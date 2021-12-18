@@ -10,4 +10,5 @@ services=(
   "seven-segment-search"
   "smoke-basin"
   "syntax-scoring"
+  "dumbo-octopus"
 )

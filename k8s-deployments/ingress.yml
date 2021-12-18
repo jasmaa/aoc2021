@@ -86,4 +86,11 @@ spec:
                 name: syntax-scoring
                 port:
                   number: 8080
+          - path: /dumbo-octopus(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: dumbo-octopus
+                port:
+                  number: 8080
           # Add more...
