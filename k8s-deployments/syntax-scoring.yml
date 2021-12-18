@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: syntax-scoring
+spec:
+  selector:
+    matchLabels:
+      run: syntax-scoring
+  template:
+    metadata:
+      labels:
+        run: syntax-scoring
+    spec:
+      containers:
+      - name: syntax-scoring
+        image: aoc2021/syntax-scoring
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: syntax-scoring
+  labels:
+    run: syntax-scoring
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: syntax-scoring

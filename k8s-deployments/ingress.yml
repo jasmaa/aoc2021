@@ -79,4 +79,11 @@ spec:
                 name: smoke-basin
                 port:
                   number: 8080
+          - path: /syntax-scoring(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: syntax-scoring
+                port:
+                  number: 8080
           # Add more...

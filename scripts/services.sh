@@ -9,4 +9,5 @@ services=(
   "the-treachery-of-whales"
   "seven-segment-search"
   "smoke-basin"
+  "syntax-scoring"
 )
