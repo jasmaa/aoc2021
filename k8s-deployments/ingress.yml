@@ -93,4 +93,11 @@ spec:
                 name: dumbo-octopus
                 port:
                   number: 8080
+          - path: /passage-pathing(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: passage-pathing
+                port:
+                  number: 8080
           # Add more...

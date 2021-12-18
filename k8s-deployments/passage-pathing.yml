@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: passage-pathing
+spec:
+  selector:
+    matchLabels:
+      run: passage-pathing
+  template:
+    metadata:
+      labels:
+        run: passage-pathing
+    spec:
+      containers:
+      - name: passage-pathing
+        image: aoc2021/passage-pathing
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: passage-pathing
+  labels:
+    run: passage-pathing
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: passage-pathing

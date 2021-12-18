@@ -11,4 +11,5 @@ services=(
   "smoke-basin"
   "syntax-scoring"
   "dumbo-octopus"
+  "passage-pathing"
 )
