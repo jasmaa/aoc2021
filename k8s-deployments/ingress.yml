@@ -107,4 +107,11 @@ spec:
                 name: transparent-origami
                 port:
                   number: 8080
+          - path: /extended-polymerization(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: extended-polymerization
+                port:
+                  number: 8080
           # Add more...

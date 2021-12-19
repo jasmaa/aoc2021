@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: extended-polymerization
+spec:
+  selector:
+    matchLabels:
+      run: extended-polymerization
+  template:
+    metadata:
+      labels:
+        run: extended-polymerization
+    spec:
+      containers:
+      - name: extended-polymerization
+        image: aoc2021/extended-polymerization
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: extended-polymerization
+  labels:
+    run: extended-polymerization
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: extended-polymerization

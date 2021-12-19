@@ -13,4 +13,5 @@ services=(
   "dumbo-octopus"
   "passage-pathing"
   "transparent-origami"
+  "extended-polymerization"
 )
