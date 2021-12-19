@@ -2,4 +2,4 @@
 
 `/10`: Finds difference between most and least common elements after 10 steps using naive counting
 
-`/40`: Finds difference between most and least common elements after 10 steps using optimized counting
+`/40`: Finds difference between most and least common elements after 40 steps using optimized counting
