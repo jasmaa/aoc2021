@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transparent-origami
+spec:
+  selector:
+    matchLabels:
+      run: transparent-origami
+  template:
+    metadata:
+      labels:
+        run: transparent-origami
+    spec:
+      containers:
+      - name: transparent-origami
+        image: aoc2021/transparent-origami
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: transparent-origami
+  labels:
+    run: transparent-origami
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: transparent-origami

@@ -100,4 +100,11 @@ spec:
                 name: passage-pathing
                 port:
                   number: 8080
+          - path: /transparent-origami(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: transparent-origami
+                port:
+                  number: 8080
           # Add more...

@@ -12,4 +12,5 @@ services=(
   "syntax-scoring"
   "dumbo-octopus"
   "passage-pathing"
+  "transparent-origami"
 )
