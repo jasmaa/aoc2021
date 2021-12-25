@@ -121,4 +121,11 @@ spec:
                 name: chiton
                 port:
                   number: 8080
+          - path: /packet-decoder(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: packet-decoder
+                port:
+                  number: 8080
           # Add more...

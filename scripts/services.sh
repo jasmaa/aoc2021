@@ -15,4 +15,5 @@ services=(
   "transparent-origami"
   "extended-polymerization"
   "chiton"
+  "packet-decoder"
 )

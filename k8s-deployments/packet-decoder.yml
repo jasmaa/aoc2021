@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: packet-decoder
+spec:
+  selector:
+    matchLabels:
+      run: packet-decoder
+  template:
+    metadata:
+      labels:
+        run: packet-decoder
+    spec:
+      containers:
+      - name: packet-decoder
+        image: aoc2021/packet-decoder
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: packet-decoder
+  labels:
+    run: packet-decoder
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: packet-decoder
