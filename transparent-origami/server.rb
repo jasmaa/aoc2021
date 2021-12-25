@@ -17,6 +17,7 @@ post '/first-fold-dots' do
     end
   rescue
     content_type :json
+    status 400
     {
       error: "invalid input"
     }.to_json
@@ -33,6 +34,7 @@ post '/code' do
     scenario.to_ascii
   rescue
     content_type :json
+    status 400
     {
       error: "invalid input"
     }.to_json

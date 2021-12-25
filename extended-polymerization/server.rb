@@ -18,6 +18,7 @@ post '/10' do
     }.to_json
   rescue
     content_type :json
+    status 400
     {
       error: "invalid input"
     }.to_json
@@ -37,6 +38,7 @@ post '/40' do
     }.to_json
   rescue
     content_type :json
+    status 400
     {
       error: "invalid input"
     }.to_json
