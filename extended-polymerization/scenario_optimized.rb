@@ -2,7 +2,7 @@ class ScenarioOptimized
   def initialize(polymer, rules)
     @pairs = (1...polymer.length)
       .map{ |i| "#{polymer[i-1]}#{polymer[i]}" }
-      .reduce({}){ |acc, el|
+      .reduce(Hash.new(0)){ |acc, el|
         if acc[el]
           acc[el] += 1
         else
@@ -34,17 +34,19 @@ class ScenarioOptimized
 
   def step
     next_pairs = Hash.new(0)
+    old_pairs = @pairs.clone
     @pairs.each do |pair, count|
-      if @rules[pair]
+      if @rules.has_key? pair
         [
           "#{pair[0]}#{@rules[pair]}",
           "#{@rules[pair]}#{pair[1]}",
         ].each do |p|
           next_pairs[p] += count
         end
+        old_pairs[pair] = 0
       end
     end
-    @pairs = next_pairs
+    @pairs = old_pairs.merge(next_pairs)
   end
 
   def commonality_difference
