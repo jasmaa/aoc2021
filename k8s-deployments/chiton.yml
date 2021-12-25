@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chiton
+spec:
+  selector:
+    matchLabels:
+      run: chiton
+  template:
+    metadata:
+      labels:
+        run: chiton
+    spec:
+      containers:
+      - name: chiton
+        image: aoc2021/chiton
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chiton
+  labels:
+    run: chiton
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: chiton

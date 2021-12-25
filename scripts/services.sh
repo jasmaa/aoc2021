@@ -14,4 +14,5 @@ services=(
   "passage-pathing"
   "transparent-origami"
   "extended-polymerization"
+  "chiton"
 )

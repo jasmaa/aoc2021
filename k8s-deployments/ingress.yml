@@ -114,4 +114,11 @@ spec:
                 name: extended-polymerization
                 port:
                   number: 8080
+          - path: /chiton(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: chiton
+                port:
+                  number: 8080
           # Add more...
