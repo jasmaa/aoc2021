@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trick-shot
+spec:
+  selector:
+    matchLabels:
+      run: trick-shot
+  template:
+    metadata:
+      labels:
+        run: trick-shot
+    spec:
+      containers:
+      - name: trick-shot
+        image: aoc2021/trick-shot
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trick-shot
+  labels:
+    run: trick-shot
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: trick-shot

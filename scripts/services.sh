@@ -16,4 +16,5 @@ services=(
   "extended-polymerization"
   "chiton"
   "packet-decoder"
+  "trick-shot"
 )

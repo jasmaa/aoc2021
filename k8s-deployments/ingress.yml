@@ -128,4 +128,11 @@ spec:
                 name: packet-decoder
                 port:
                   number: 8080
+          - path: /trick-shot(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: trick-shot
+                port:
+                  number: 8080
           # Add more...
