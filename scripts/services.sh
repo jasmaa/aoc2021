@@ -17,4 +17,5 @@ services=(
   "chiton"
   "packet-decoder"
   "trick-shot"
+  "snailfish"
 )

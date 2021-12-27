@@ -135,4 +135,11 @@ spec:
                 name: trick-shot
                 port:
                   number: 8080
+          - path: /snailfish(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: snailfish
+                port:
+                  number: 8080
           # Add more...
