@@ -142,4 +142,11 @@ spec:
                 name: snailfish
                 port:
                   number: 8080
+          - path: /beacon-scanner(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: beacon-scanner
+                port:
+                  number: 8080
           # Add more...
