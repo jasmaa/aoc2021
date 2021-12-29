@@ -149,4 +149,11 @@ spec:
                 name: beacon-scanner
                 port:
                   number: 8080
+          - path: /trench-map(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: trench-map
+                port:
+                  number: 8080
           # Add more...

@@ -18,4 +18,5 @@ services=(
   "packet-decoder"
   "trick-shot"
   "snailfish"
+  "trench-map"
 )
