@@ -156,4 +156,11 @@ spec:
                 name: trench-map
                 port:
                   number: 8080
+          - path: /dirac-dice(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: dirac-dice
+                port:
+                  number: 8080
           # Add more...

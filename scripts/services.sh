@@ -19,4 +19,5 @@ services=(
   "trick-shot"
   "snailfish"
   "trench-map"
+  "dirac-dice"
 )
