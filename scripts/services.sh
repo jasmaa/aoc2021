@@ -20,4 +20,5 @@ services=(
   "snailfish"
   "trench-map"
   "dirac-dice"
+  "reactor-reboot"
 )

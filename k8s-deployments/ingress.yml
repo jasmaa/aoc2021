@@ -163,4 +163,11 @@ spec:
                 name: dirac-dice
                 port:
                   number: 8080
+          - path: /reactor-reboot(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: reactor-reboot
+                port:
+                  number: 8080
           # Add more...

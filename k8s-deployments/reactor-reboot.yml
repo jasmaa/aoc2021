@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactor-reboot
+spec:
+  selector:
+    matchLabels:
+      run: reactor-reboot
+  template:
+    metadata:
+      labels:
+        run: reactor-reboot
+    spec:
+      containers:
+      - name: reactor-reboot
+        image: aoc2021/reactor-reboot
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactor-reboot
+  labels:
+    run: reactor-reboot
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: reactor-reboot
