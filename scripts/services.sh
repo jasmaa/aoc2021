@@ -21,4 +21,5 @@ services=(
   "trench-map"
   "dirac-dice"
   "reactor-reboot"
+  "amphipod"
 )

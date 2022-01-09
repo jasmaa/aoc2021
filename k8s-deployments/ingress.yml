@@ -170,4 +170,11 @@ spec:
                 name: reactor-reboot
                 port:
                   number: 8080
+          - path: /amphipod(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: amphipod
+                port:
+                  number: 8080
           # Add more...
