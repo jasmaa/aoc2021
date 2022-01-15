@@ -22,4 +22,5 @@ services=(
   "dirac-dice"
   "reactor-reboot"
   "amphipod"
+  "arithmetic-logic-unit"
 )

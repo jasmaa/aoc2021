@@ -177,4 +177,11 @@ spec:
                 name: amphipod
                 port:
                   number: 8080
+          - path: /arithmetic-logic-unit(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: arithmetic-logic-unit
+                port:
+                  number: 8080
           # Add more...
