@@ -184,4 +184,11 @@ spec:
                 name: arithmetic-logic-unit
                 port:
                   number: 8080
+          - path: /sea-cucumber(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: sea-cucumber
+                port:
+                  number: 8080
           # Add more...

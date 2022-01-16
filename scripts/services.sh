@@ -23,4 +23,5 @@ services=(
   "reactor-reboot"
   "amphipod"
   "arithmetic-logic-unit"
+  "sea-cucumber"
 )
